@@ -1,0 +1,674 @@
+
+/*this is the stylying for the phones*/
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    /*adding a background black color to the body of my browser*/
+
+    body{
+      background-color: black;
+    }
+
+    /* styling the menu icon */
+  #nav-toggle{
+  	position: absolute;
+  	cursor: pointer;
+  	background: black;
+  	padding: 27px 50px 33px 12px;
+  	border: 5px solid #333;
+  	border-radius: 100%;
+  	display: none;
+  }
+
+  /* styling the span on the menu icon */
+  #nav-toggle span , #nav-toggle span:before , #nav-toggle span:after{
+  	position: absolute;
+  	content: '';
+  	display: block;
+  	background: gray;
+  	width: 40px;
+  	height: 7px;
+  	border-radius: 10px;
+  	transition: all 500ms ease;
+  }
+
+  /*  still styling the 3 lines on the span*/
+  #nav-toggle span:before{
+  	top: -10px;
+  }
+  #nav-toggle span:after{
+  	bottom: -10px;
+  }
+
+
+  /*  */
+  #nav-toggle.active span:before, #nav-toggle.active span:after {
+    top: 0;
+  }
+
+  /* make the spin transparent */
+  #nav-toggle.active span{
+  	background: transparent;
+  }
+
+  #nav-toggle.active span:before{
+  	transform: rotate(45deg);
+  }
+  #nav-toggle.active span:after{
+  	transform: rotate(-45deg);
+  }
+
+  /*the end of the span  */
+
+
+  ul#navbar{
+  	list-style-type: none;
+  }
+  ul#navbar li{
+  	display: inline-block;
+  	font-size: 1.5em;
+  }
+  ul#navbar li a{
+  	text-decoration: none;
+  	display: block;
+  	padding: 10px;
+  	color: #FF0000;
+  	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  	background: rgba(255,170,212,1);
+  	transition: all 0.3s ease;
+  }
+
+  ul#navbar li a:hover{
+  	color: black;
+  	background: #FF0000;
+  }
+  @media (max-width: 480px){
+  	#nav-toggle.active{
+  		position: absolute;
+  		animation:rise 0.3s ease-in-out;
+  		top: 11%;
+  	}
+  	#nav-toggle{
+  		top: 40%;
+  		left: 42%;
+  		animation:drop 1s ease-in-out;
+  		display: block;
+  	}
+  	#nav{
+  		display: none;
+  	}
+  	ul#navbar{
+  		margin-top: 125px;
+  		padding-left: 0;
+  	}
+  	ul#navbar li{
+  		display: block;
+  	}
+  	ul#navbar li a{
+  		text-align: center;
+  	}
+
+  }
+  @media (min-width: 481px) and (max-width: 767px){
+  	#nav-toggle.active{
+  		position: absolute;
+  		animation:rise 0.3s ease-in-out;
+  		top: 11%;
+  	}
+  	#nav-toggle{
+  		animation:drop 1s ease-in-out;
+  		top: 40%;
+  		left: 45%;
+  		display: block;
+  	}
+  	#nav{
+  		display: none;
+  	}
+  	ul#navbar{
+  		margin-top: 125px;
+  		padding-left: 0;
+  	}
+  	ul#navbar li{
+  		display: block;
+  	}
+  	ul#navbar li a{
+  		text-align: center;
+  	}
+
+  }
+  @media (min-width: 768px) and (max-width: 992px){
+  	#nav-toggle{
+  		left: 0;
+  		display: block;
+  		border-radius: 0;
+  	}
+  	#nav{
+  		display: none;
+  	}
+  	ul#navbar{
+  		margin-left: 16px;
+  		animation: slide 0.3s ease;
+  	}
+  	ul#navbar li{
+  		margin-top: 10px;
+  	}
+  }
+  @media (min-width: 992px){
+  	#nav-toggle{
+  		left: 0;
+  		display: block;
+  		border-radius: 0;
+  	}
+  	#nav{
+  		display: none;
+  	}
+  	ul#navbar{
+  		margin-left: 16px;
+  		animation: slide 0.3s ease;
+  	}
+  	ul#navbar li{
+  		margin-top: 10px;
+  	}
+  }
+
+  @keyframes drop{
+  	from{
+  		top: 10%;
+  	}
+  	to{
+  		top: 40%;
+  	}
+  }
+  @keyframes rise{
+  	from{
+  		top: 40%;
+  	}
+  	to{
+  		top: 11%;
+  	}
+  }
+  @keyframes slide{
+  	from{
+  		margin-left: -500px;
+  	}
+  	to{
+  		margin-left: 16px;
+  	}
+  }
+
+    /*Aligning the  sidebar to the left side of my browser ,occupying a
+    width of 15% and a height that is suitable to th eye sight.the positioned is fixed
+    which resuts into the sidebar being glued to the left side of the  browser*/
+
+    #sidebar_styling{
+      width: 50%;
+      height: 400px;
+      position: fixed;
+      color:white;
+      /*opacity: 0.5;*/
+      /*display: none;*/
+    }
+
+    /* Centered text and a bottom padding to the sidebar listed items */
+
+    #sidebar_styling li{
+      text-align: center;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+
+    /* Targeting the sidebar images and making it a
+    border radius of 50% as well as a top padding */
+
+    #sidebar_styling img{
+      padding-top: 10px;
+      border-radius: 50%;
+      display: none;
+    }
+
+    /*Removing the bullets from the unordered list*/
+
+    nav ul{
+      list-style-type: none;
+    }
+
+
+    /*Black background home icon with a padding top to
+    provide space between the icons within the sidbar*/
+
+    #home_icon{
+      padding-top: 10px;
+    }
+
+    /*Adding a hover to the home icon ,to change
+    to a gray color and a black text color */
+
+    #home_icon:hover{
+      background-color: red;
+      color: black;
+    }
+
+    /*removing the line and changing the text size
+    bigger,and addding color*/
+
+    #home_icon a{
+      color: red;
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    /* Adding a black background hover to the sidebar
+    this apply to the classed information */
+
+    .sidebar_icons:hover{
+
+    }
+
+    /*removing the line from the anchor tag and changing the
+    color as well as enchancing the size of the font*/
+
+    .sidebar_icons a{
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+    }
+
+    /*aligned a background image to the top right of my browser ,by floating it right
+    as well as inserting  a suitable height and width and sizing it to cover to fit the cover of the screen */
+
+    #image_aligned_right{
+      height:750px;
+      float: right;
+      width: 100%;
+      background-image: url("images/lance.jpeg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /*styling the text ontop of the background image, giving
+    it a gray color with some padding ,as well as font size*/
+
+    #image_aligned_right p{
+      color: #333;
+      padding-left: 575px;
+      font-size: 42px;
+    }
+
+    #image_aligned_right h3{
+      color: #333;
+      padding-left: 450px;
+      font-size: 45px;
+    }
+
+    /*personal Statement aligned to the right of the browser,comes
+    with a suitable height and width. contains padding for personal
+    alignement as well as a background gray color to add a theme to the browser page*/
+
+    #personal_statement_aligned_right{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color: #333;
+      float: right;
+      height: 1100px;
+      color: black;
+      font-family: 'IM Fell Great Primer', serif;
+    }
+
+    /*targeting the h1 of the personal statement centering it ,
+    inserting a font size as well as a black text color*/
+
+    #personal_statement_aligned_right h1{
+      text-align: center;
+      color: black;
+      font-size: 55px;
+    }
+
+    /*targeting the p tag of the personal statement white text color,
+    centered text as well as padding .contains a font size too*/
+
+    #personal_statement_aligned_right p{
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: center;
+      color: white;
+      font-size: 50px;
+    }
+
+    /*aligned  content to the right ,contains paddding for adjusting ,
+    a width and height to compliment the rest of the content on the browser */
+
+    #skill_ability_aligned_right{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color: black;
+      float: right;
+      height: 1200px;
+      color: white;
+    }
+
+    /*targeting the headings and centering them in the middle as well as adding font size*/
+
+    #skill_ability_aligned_right h2,h4{
+      text-align: center;
+      font-size: 55px;
+    }
+
+    /*centered white text with a font size and padding for adjustment */
+
+    #skill_ability_aligned_right p{
+      padding-left: 10%;
+      padding-right: 10%;
+      font-size: 50px;
+      color: white;
+    }
+
+
+    /*white text color background red color aligned
+    content to the right of the browser,contains padding as well */
+
+    #coding_content_holder{
+      color:white;
+      background-color: #333;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height:650px;
+      float: right;
+      width: 100%;
+    }
+
+    #coding_content_holder h1{
+      text-align: center;
+      font-size: 50px;
+    }
+
+
+        #html_bar{
+          padding-left: 150px;
+          padding-bottom: 10px;
+          float:left;
+        }
+
+        #css_bar{
+          padding-left: 150px;
+          padding-bottom: 10px;
+          float:left;
+        }
+
+        #javascript_bar{
+          padding-left: 150px;
+          padding-top: 20px;
+          float:left;
+        }
+
+        #jquery_bar{
+          padding-left: 150px;
+          padding-top: 20px;
+          float:left;
+        }
+
+        /*stylyng the skills images*/
+        #html_bar img{
+          border-radius: 50%;
+          width: 240px;
+          height: 200px;
+          box-shadow: 5px 5px 5px red;
+        }
+
+        #css_bar img{
+          box-shadow: 5px 5px 5px red;
+          border-radius: 50%;
+          width: 240px;
+          height: 200px;
+        }
+
+        #javascript_bar img{
+          box-shadow: 5px 5px 5px red;
+          border-radius: 50%;
+          width: 240px;
+          height: 200px;
+        }
+
+        #jquery_bar img{
+          box-shadow: 5px 5px 5px red;
+          border-radius: 50%;
+          width: 240px;
+          height: 200px;
+        }
+
+        /*adding a hover function to the bar of the skills */
+        #html_bar:hover{
+          opacity: 0.1;
+          transition: 3s;
+
+        }
+
+        #css_bar:hover{
+          opacity: 0.1;
+          transition: 3s;
+        }
+
+        #javascript_bar:hover{
+          opacity: 0.1;
+          transition: 3s;
+        }
+
+        #jquery_bar:hover{
+          opacity: 0.1;
+          transition: 3s;
+        }
+
+    /* courses completed content displays on the right ,with a matching
+    width as the rest of the content that appears  on the right with
+    a white text color and a themed background color */
+
+    #courses{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color:black;
+      float: right;
+      height: 2400px;
+      color: white;
+    }
+
+    /*styling the p tag within the courses holder*/
+    #courses p{
+      padding-left: 10%;
+      padding-right: 10%;
+      font-size: 50px;
+      color: white;
+    }
+
+    /*aligning the heading center*/
+    #courses h2{
+      text-align: center;
+      font-size: 55px;
+    }
+
+    /*education content contains padding ,background color,
+    text color as well as a suitable width and height*/
+
+    #education_aligned_right{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color: #333;
+      float: right;
+      height: 2300px;
+    }
+
+    /*aligning white headings from h2-h5 */
+
+    #education_aligned_right h2,h3{
+      text-align: center;
+      color: white;
+      font-size: 55px;
+    }
+
+    /*Removing the bullets from the unordered list*/
+
+    #education_aligned_right ul{
+      list-style-type: none;
+      font-size: 50px;
+      padding-left: 110px;
+    }
+
+    /*creatng space between the listed items by adding a padding bottom*/
+
+    #education_aligned_right li{
+      padding-bottom: 10px;
+      color: white;
+    }
+
+    /*Styling the p tags within the education aligned holder*/
+    #education_aligned_right p{
+      padding-left: 10%;
+      padding-right: 10%;
+      font-size: 50px;
+      color: white;
+    }
+
+
+    /**/
+    #contact_holder{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color:#333;
+      float: right;
+      height: 700px;
+      color: white;
+    }
+
+    #contact_holder h2{
+      text-align: center;
+      font-size: 55px;
+    }
+
+    #contact_holder table{
+      padding-left: 5%;
+      float: left;
+      width: 40%;
+    }
+
+    #contact_holder td{
+      padding-bottom: 35px;
+    }
+
+    .td_text{
+      padding-left: 10px;
+      font-size: 47px;
+    }
+
+    #home_bullets_styling{
+      list-style-type: none;
+    }
+
+
+    /*aligning the reference page to the right of the browser*/
+    #references{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      background-color:black;
+      float: right;
+      height: 3350px;
+      color: white;
+    }
+
+    #references h2{
+      text-align: center;
+      font-size: 55px;
+    }
+
+    /*#references h4{
+      padding-right: 50%;
+    }*/
+
+    #references img{
+      border-radius: 50%;
+      width: 400px;
+      height: 400px;
+      box-shadow: 5px 5px 5px red;
+      margin-left: 30%;
+      margin-top: 5%;
+    }
+
+    #references img:hover{
+      transform: rotateY(-180deg);
+      transition: 2s;
+      box-shadow: 5px 5px 5px red;
+    }
+
+    /*styling the text and headers below the image of nate*/
+    #reference_nate{
+       float: left;
+       width: 100%;
+    }
+
+    #reference_nate h3{
+      padding-right: 30%;
+      font-size: 40px;
+    }
+
+    #reference_nate h4{
+    text-align: center;
+    }
+
+    #reference_nate p{
+      padding-left: 100px;
+      font-size: 50px;
+    }
+
+    /*stylying the text below the image of candice */
+    #reference_candice{
+       float: left;
+       width: 100%;
+    }
+
+    #reference_candice h3{
+      padding-right: 28%;;
+      font-size: 40px;
+    }
+
+    #reference_candice h4{
+        text-align: center;
+    }
+
+    #reference_candice p{
+      padding-left: 80px;
+      font-size: 50px;
+    }
+
+    /*stylying the text below the image of stefan*/
+    #reference_stefan{
+       float: left;
+       width: 100%;
+    }
+
+    #reference_stefan h3{
+      padding-right: 29%;
+      font-size: 40px;
+    }
+
+    #reference_stefan h4{
+      text-align: center;
+    }
+
+    #reference_stefan p{
+      padding-left: 80px;
+      font-size: 50px;
+    }
+
+    .td_icons{
+      color: white;
+      padding-left: 3%;
+      font-size: 50px;
+    }
+
+
+}
